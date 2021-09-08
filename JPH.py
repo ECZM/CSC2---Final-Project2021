@@ -38,7 +38,6 @@ def check_inputs ():
     Label(main_window, text="               ") .grid(column=2,row=1)
     Label(main_window, text="               ") .grid(column=2,row=2)
     Label(main_window, text="               ") .grid(column=2,row=3)
-    var = StringVar()
     #Check that customer name is not blank, set error text if blank   
     if len(entry_customer.get()) == 0 :
         Label(main_window,fg="red", text="*Required") .grid(column=2,row=0)
