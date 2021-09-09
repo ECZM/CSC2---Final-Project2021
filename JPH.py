@@ -43,21 +43,39 @@ def check_inputs ():
     if len(entry_customer.get()) == 0 :
         Label(main_window,fg="red", text="*Required") .grid(column=2,row=0)
         input_check = 1
+    elif (entry_customer.get().isdigit()) : 
+        if  int(entry_customer.get()) <=0 or  int(entry_customer.get()) >=0:
+            Label(main_window,fg="red", text="*Invalid") .grid(column=2,row=0)
+            input_check = 1
     #Check that receipt number is not blank, set error text if blank     
     if len(entry_receipt.get()) == 0 :
         Label(main_window,fg="red", text="*Required") .grid(column=2,row=1)
         input_check = 1 
+    elif (entry_receipt.get().isdigit()) : 
+        if  int(entry_receipt.get()) < 0:
+            Label(main_window,fg="red", text="*6 numbers only") .grid(column=2,row=1)
+            input_check = 1
+    else :
+        Label(main_window,fg="red", text="*Invalid") .grid(column=2,row=1)
+        input_check = 1
     #Check that item hired is not blank, set error text if blank     
     if len(entry_item.get()) == 0 :
         Label(main_window,fg="red", text="*Required") .grid(column=2,row=2)
         input_check = 1
+    elif (entry_item.get().isdigit()) : 
+        if  int(entry_item.get()) <=0 or  int(entry_item.get()) >=0:
+            Label(main_window,fg="red", text="*Invalid") .grid(column=2,row=2)
+            input_check = 1
     #Check the number of items hired is not blank and between 1 and 500, set error text if blank  
-    if (entry_numhired.get().isdigit()) : 
+    if len(entry_numhired.get()) == 0 :
+        Label(main_window,fg="red", text="*Required") .grid(column=2,row=3)
+        input_check = 1
+    elif (entry_numhired.get().isdigit()) : 
         if  int(entry_numhired.get()) < 1 or  int(entry_numhired.get()) > 500:
             Label(main_window,fg="red", text="*1-500 only") .grid(column=2,row=3)
             input_check = 1
     else :
-        Label(main_window,fg="red", text="*Required") .grid(column=2,row=3)
+        Label(main_window,fg="red", text="*Invalid") .grid(column=2,row=3)
         input_check = 1
     if input_check == 0 : append_name()
 
@@ -132,4 +150,5 @@ def main():
     main_window.mainloop()
     
 main()
+
 
