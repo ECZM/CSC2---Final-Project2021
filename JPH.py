@@ -38,7 +38,7 @@ def check_inputs ():
     Label(main_window, text="               ") .grid(column=2,row=1)
     Label(main_window, text="               ") .grid(column=2,row=2)
     Label(main_window, text="               ") .grid(column=2,row=3)
-    #Check that customer name is not blank, set error text if blank   
+    #Check that customer name is not blank and specific for string, set error text if blank   
     if len(entry_customer.get()) == 0 :
         Label(main_window,fg="red", text="*Required") .grid(column=2,row=0)
         input_check = 1
@@ -46,7 +46,8 @@ def check_inputs ():
         if  int(entry_customer.get()) <=0 or  int(entry_customer.get()) >=0:
             Label(main_window,fg="red", text="*Invalid") .grid(column=2,row=0)
             input_check = 1
-    #Check that receipt number is not blank, set error text if blank     
+   
+    #Check that receipt number is not blank and specific for integer, set error text if blank     
     if len(entry_receipt.get()) == 0 :
         Label(main_window,fg="red", text="*Required") .grid(column=2,row=1)
         input_check = 1 
@@ -57,7 +58,7 @@ def check_inputs ():
     else :
         Label(main_window,fg="red", text="*Invalid") .grid(column=2,row=1)
         input_check = 1
-    #Check that item hired is not blank, set error text if blank     
+    #Check that item hired is not blank and specific for string, set error text if blank     
     if len(entry_item.get()) == 0 :
         Label(main_window,fg="red", text="*Required") .grid(column=2,row=2)
         input_check = 1
@@ -65,7 +66,8 @@ def check_inputs ():
         if  int(entry_item.get()) <=0 or  int(entry_item.get()) >=0:
             Label(main_window,fg="red", text="*Invalid") .grid(column=2,row=2)
             input_check = 1
-    #Check the number of items hired is not blank and between 1 and 500, set error text if blank  
+  
+    #Check the number of items hired is not blank, specific for integer and between 1 and 500, set error text if blank  
     if len(entry_numhired.get()) == 0 :
         Label(main_window,fg="red", text="*Required") .grid(column=2,row=3)
         input_check = 1
@@ -145,9 +147,9 @@ def main():
     #create the GUI and start it up
     main_window =Tk()
     main_window.title("Julie's Party Hire")
+    main_window.geometry("800x800")
     setup_buttons()   
     main_window.mainloop()
     
 main()
-
 
