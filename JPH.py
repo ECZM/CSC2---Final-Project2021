@@ -164,7 +164,7 @@ def main():
     my_canvas.bind('<Configure>', lambda e: my_canvas.configure(scrollregion = my_canvas.bbox("all")))
     #Create another frame inside the Canvas
     second_frame = Frame(my_canvas)
-    my_canvas.create_window((0.0), window=second_frame, anchor="nw")
+    my_canvas.create_window((0,0), window=second_frame, anchor="nw")
 
     setup_buttons()   
     main_window.mainloop()
