@@ -147,7 +147,7 @@ def main():
     #create the GUI and start it up
     main_window =Tk()
     main_window.title("Julie's Party Hire")
-    main_window.geometry("800x800")
+    main_window.geometry("680x600")
     setup_buttons()   
     main_window.mainloop()
     
