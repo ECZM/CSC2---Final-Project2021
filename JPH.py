@@ -4,6 +4,7 @@
 
 #import tkinter so we can make a GUI
 from tkinter import *
+from tkinter import ttk
 
 #quit subroutine
 def quit():
@@ -148,6 +149,23 @@ def main():
     main_window =Tk()
     main_window.title("Julie's Party Hire")
     main_window.geometry("680x600")
+ #Creating a full screen scrollbar
+    #Create a Main Frame
+    main_frame = Frame(main_window)
+    main_frame.pack(fill=BOTH, expand=1)
+    #Create a Canvas
+    my_canvas = Canvas(main_frame)
+    my_canvas.pack(side=LEFT, fill=BOTH, expand=1)
+    #Add a Scrollbar to the Camvas
+    my_scrollbar = ttk.Scrollbar(main_window, orient=VERTICAL, command=my_canvas.yview)
+    my_scrollbar.pack(side=RIGHT, fill=Y)
+    #Configure the Canvas
+    my_canvas.configure(yscrollcommand=my_scrollbar)
+    my_canvas.bind('<Configure>', lambda e: my_canvas.configure(scrollregion = my_canvas.bbox("all")))
+    #Create another frame inside the Canvas
+    second_frame = Frame(my_canvas)
+    my_canvas.create_window((0.0), window=second_frame, anchor="nw")
+
     setup_buttons()   
     main_window.mainloop()
     
