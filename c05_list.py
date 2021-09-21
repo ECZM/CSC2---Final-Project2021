@@ -78,6 +78,19 @@ def check_inputs ():
         input_check = 1
     if input_check == 0 : append_name()
 
+#add the next item hired to the list
+def append_name ():
+    #these are the global variables that are used
+    global hired_details, entry_customer,entry_receipt,entry_item,entry_numhired, total_entries
+    #append each item to its own area of the list
+    hired_details.append([entry_customer.get(),entry_receipt.get(),entry_item.get(),entry_numhired.get()])
+    #clear the boxes
+    entry_customer.delete(0,'end')
+    entry_receipt.delete(0,'end')
+    entry_item.delete(0,'end')
+    entry_numhired.delete(0,'end')
+    total_entries +=  1
+
 #create the buttons and labels
 def setup_buttons():
     #these are the global variables that are used
