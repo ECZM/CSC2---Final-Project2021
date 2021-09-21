@@ -15,7 +15,12 @@ def check_inputs ():
     elif (entry_customer.get().isdigit()) : 
         if  int(entry_customer.get()) <=0 or  int(entry_customer.get()) >=0:
             Label(main_window,fg="red", text="*Invalid") .grid(column=2,row=0)
-
+    #Check that receipt number is not blank and specific for integer, set error text if blank     
+    if len(entry_receipt.get()) == 0 :
+        Label(main_window,fg="red", text="*Required") .grid(column=2,row=1)
+    elif (entry_receipt.get().isdigit()) : 
+        if  int(entry_receipt.get()) < 0:
+            Label(main_window,fg="red", text="*6 numbers only") .grid(column=2,row=1)
 
 
 #create the buttons and labels
