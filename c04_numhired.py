@@ -33,6 +33,14 @@ def check_inputs ():
     elif (entry_item.get().isdigit()) : 
         if  int(entry_item.get()) <=0 or  int(entry_item.get()) >=0:
             Label(main_window,fg="red", text="*Invalid") .grid(column=2,row=2)
+    #Check the number of items hired is not blank, specific for integer and between 1 and 500, set error text if blank  
+    if len(entry_numhired.get()) == 0 :
+        Label(main_window,fg="red", text="*Required") .grid(column=2,row=3)
+    elif (entry_numhired.get().isdigit()) : 
+        if  int(entry_numhired.get()) < 1 or  int(entry_numhired.get()) > 500:
+            Label(main_window,fg="red", text="*1-500 only") .grid(column=2,row=3)
+    else :
+        Label(main_window,fg="red", text="*Invalid") .grid(column=2,row=3)
 
 #create the buttons and labels
 def setup_buttons():
