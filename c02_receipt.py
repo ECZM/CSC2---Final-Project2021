@@ -8,6 +8,10 @@ from tkinter import *
 #Check the inputs are all valid
 def check_inputs ():
     #these are the global variables that are used
+    global entry_customer, entry_receipt
+    Label(main_window, text="               ") .grid(column=2,row=0)
+    Label(main_window, text="               ") .grid(column=2,row=1)
+    #these are the global variables that are used
     global entry_customer,entry_receipt
     #Check that customer name is not blank and specific for string, set error text if blank   
     if len(entry_customer.get()) == 0 :
@@ -28,10 +32,10 @@ def setup_buttons():
     #these are the global variables that are used
     global entry_customer, entry_receipt
     #create all the empty and default labels, buttons and entry boxes. Put them in the correct grid location
-    Label(main_window, text="Customer Name") .grid(column=0,row=0,sticky=E)
+    Label(main_window, text="Customer Name").grid(column=0,row=0,sticky=E)
     entry_customer = Entry(main_window)
     entry_customer.grid(column=1,row=0)
-    Label(main_window, text="Receipt Number") .grid(column=0,row=1,sticky=E)
+    Label(main_window, text="Receipt Number").grid(column=0,row=1,sticky=E)
     entry_receipt = Entry(main_window)
     entry_receipt.grid(column=1,row=1)
    
