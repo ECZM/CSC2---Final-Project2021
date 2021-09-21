@@ -45,7 +45,7 @@ def check_inputs ():
 #create the buttons and labels
 def setup_buttons():
     #these are the global variables that are used
-    global hired_details, entry_customer, entry_receipt,entry_item,entry_numhired, total_entries, delete_item
+    global entry_customer, entry_receipt, entry_item, entry_numhired
     #create all the empty and default labels, buttons and entry boxes. Put them in the correct grid location
     Label(main_window, text="Customer Name") .grid(column=0,row=0,sticky=E)
     entry_customer = Entry(main_window)
