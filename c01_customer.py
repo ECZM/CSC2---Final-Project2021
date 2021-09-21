@@ -7,6 +7,8 @@ from tkinter import *
 
 #Check the inputs are all valid
 def check_inputs ():
+    #these are the global variables that are used
+    global entry_customer
     Label(main_window, text="               ") .grid(column=2,row=0)
     #Check that customer name is not blank and specific for string, set error text if blank   
     if len(entry_customer.get()) == 0 :
